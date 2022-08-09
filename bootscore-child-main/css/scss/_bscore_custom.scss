@@ -1,0 +1,454 @@
+/*!
+ * bootScore custom styles
+ */
+
+// Add your own code here!
+// Because this file is compiled after Bootstrap, you're also able to use Bootstrap mixins for better code.
+// Some examples can be found here: https://bootscore.me/documentation/bootstrap-css-sass
+h1, h2, h3, h4{
+    font-family: Lato, sans-serif;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+body.home header .bg-white{
+    background: none;
+    background-color: transparent !important;
+}
+
+@mixin icons-caracteristicas($position: 'vertical'){
+    .icons{
+        padding-bottom: 1em;
+        text-align: center;
+        font-size: 0.8rem;
+        ul{
+            padding: 0;
+            li{
+                padding-top: 2em;
+                margin:0 1em;
+                min-width: 3em;
+                list-style: none;
+                display: inline-block;
+                background-image: url("../../img/home/icon-bath.png");
+                background-repeat: no-repeat;
+                background-position: center top;
+                &.car{
+                    background-image: url("../../img/home/icon-car.png");
+                }
+                &.bath{
+                    background-image: url("../../img/home/icon-bath.png");
+                }
+                &.square{
+                    background-image: url("../../img/home/icon-square.png");
+                }
+                &.bed{
+                    background-image: url("../../img/home/icon-bed.png");
+                }
+            }
+        }
+        @if $position = 'horizontal' {
+            ul li{
+                padding:0;
+                text-align: left;       
+            }
+        }
+    }
+}
+
+.btn{
+    font: normal normal bold 14px/16px Lato;
+    padding: 0.8em 1.5em;
+    &.btn-danger{
+        color:#fff;
+        box-shadow: 1px 2px 3px #eed3ce;
+        &:hover{
+            color:#fff;
+            box-shadow: 1px 2px 5px #c99a92;
+        }
+    }
+}
+.text-red{
+    color:#d42e12;
+}
+header{
+    nav img.logo {
+        max-width: 230px;
+    }
+    #offcanvas-navbar{
+        margin-left: 3em;
+    }
+    ul.menu-extra{
+        margin-top: 5px;
+      li{
+        display: inline-block;
+        list-style: none;
+      }
+      ul.lang{
+        margin-left: 10px;
+        position: relative;
+        display: inline-block;
+        padding: 0 20px;
+        cursor: pointer;
+        &:hover ul.options{
+            display: block;
+            position: absolute;
+            left: 0;
+        }
+        ul.options{
+            background-color: #fff;
+            display: none;
+            padding:0 20px;
+            margin:0;
+            li{
+                display: block;
+                list-style: none;
+                border-top: 1px solid #DDD;
+            }
+        }
+      }
+    }
+    nav#nav-main{
+        ul{
+            li.menu-item{
+                a{
+                    margin: 0 0.3rem;
+                    text-align: left;
+                    font: normal normal bold 16px/19px Lato;
+                    letter-spacing: 0px;
+                    color: #333333;
+                    &:hover, &.active{
+                        color: #B72529;
+                    }
+                }
+            }
+        }
+    }
+}
+.breadcums{
+    letter-spacing: 0.3px;
+    font-size: 0.85rem;
+    color: #333;
+    a{
+        color: #777;
+        font-size: 0.85rem;
+        text-decoration: none;
+    }
+    i.delimiter{
+        color: #777;
+        font-size: 0.7rem;
+    }
+}
+.home-intro{
+    h1{
+        font-size: 4rem;
+    }
+    p.sub{
+        font-size: 1.4rem;
+        margin:2em 0;
+        color: #777;
+    }
+    position: relative;
+    .rectangle{
+        padding-top: 10em;
+        background-color: #f5f5f5;
+        margin-right: -5em;
+    }
+    .photos{
+        padding: 5em 0;
+        img{
+            max-width: max-content;
+        }
+    }
+    #search-box{
+        background-color: #fff;
+        padding:1.5em 1em;
+        border-radius: 24px;
+        box-shadow: 3px 5px 15px #CCC;
+        button{
+            border-radius: 12px;
+        }
+    }
+}
+section{
+    margin-top: 7em;
+    &#main{
+        margin-top: 2em;
+    }
+    .section-title{
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        rotate: -90deg;
+        position: absolute;
+        left: 0;
+        margin-top: 5em;
+        &::before{
+            content: "";
+            border-bottom: 2px solid #d42e12;
+            width: 40px;
+            position: relative;
+            display: inline-block;
+            margin: 3px;
+            left:-5px;
+        }
+    }
+    .box-imovel{
+        padding:0;
+        box-shadow: #ddd 1px 1px 30px;
+        .text{
+            padding:2em;
+            a{
+                text-decoration: none;
+                color: #333;
+            }
+
+            p{margin:0;}
+            .local{
+                font-size: 0.8rem;
+            }
+        }
+        .photo img{
+            width: 100%
+        }
+        @include icons-caracteristicas;
+    }
+}
+section#servicos{   
+    .rectangle{
+        padding-top: 10em;
+        background-color: #f5f5f5;
+        margin-right: -5em;
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        height: 35em;
+    }
+    .row.list{
+        > div{
+            border-radius: 5px;
+        }
+        .box{
+            background-color: #fff;
+            padding:3em 2em;
+            border-radius: 3px;
+            box-shadow: 2px 3px 20px #BBB;
+            text-align: center;
+            a{
+                color:#d42e12;
+                text-decoration: none;
+                font-size: 0.85rem;
+            }
+        }
+    }
+}
+section#destaque{
+    .box-text{
+        position: relative;
+        background-color: #fff;
+        border-radius: 2em;
+        box-shadow: 2px 3px 30px #BBB;
+        padding: 2em;
+        padding-right: 5em;
+        margin-right: -5em;
+    }
+}
+section#contacto{
+    .rectangle{
+        padding-top: 10em;
+        background-color: #f5f5f5;
+        margin-right: -5em;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        height: 35em;
+    }
+    .box-contacto{
+        padding: 3em;
+        background-color: #fff;
+        box-shadow: 2px 3px 30px #BBB;
+        border-radius: 5px;
+    }
+}
+section#noticias{
+    .box{
+        text-align: center;
+        img{
+            box-shadow: 2px 3px 30px #BBB;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-image: url("../../img/home/home-foto02.png");
+            background-size: cover;
+        }
+    }
+}
+footer{
+    color: #DDD;
+    background-color: #333333;
+    font-size: 14px;
+    h4{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .logo-nexus{
+        height: 12px;
+        filter: invert(100%) brightness(250%);
+    }
+    .border-top{
+        border-top: 1px solid #777 !important;
+    }
+    .icons-social{
+        a{
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            overflow: hidden;
+            text-indent: -100px;
+            margin-right: 5px;
+            background-position-x: 0;
+            background-position-y: 0;
+            background-image: url('../../img/home/footer-icons-social.png');
+            transition: all .5s;
+
+            &:hover{
+                box-shadow: 3px 3px 10px #2b2727;
+                filter: brightness(80%);
+            }
+
+            &.facebook{
+
+            }
+            &.instagram{
+                background-position-x: -52px;
+            }
+            &.linkedin{
+                background-position-x: -104px;
+            }
+            &.youtube{
+                background-position-x: -156px;
+            }
+            &.twitter{
+                background-position-x: -208px;
+            }
+        }
+    }
+    .ultimosImoveis{
+        font-size: 0.75rem;
+        .price{
+            font-weight: bold;
+        }
+    }
+}
+#slide-imovel{
+    margin-top: 90px;
+}
+nav.breadcrumb{
+    color:#333;
+    .divider{
+        font-size: 0.7rem;
+        color: #BBB;
+        margin-top: 3px;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    a{
+        color:#777;
+        text-decoration: none;
+    }
+}
+.anchor-links{
+    .btn{
+        transition: all .3s;
+        display: inline;
+        background-color: #ebebeb;
+        padding: 7px 12px;
+        font-size: 0.8rem;
+        margin-right: .3rem;
+        color: #333;
+        &:hover{
+            background-color: #CCC;
+        }
+    }
+}
+.row.head{
+    p.address{
+        font-size: 0.9rem;
+        color:#777;
+    }
+}
+.box-resumo{
+    .title{
+        font-weight: bold;
+    }
+}
+.box-shadow{
+    box-shadow: #ddd 1px 1px 30px;
+    padding:2em;
+}
+.acf-map {
+    width: 100%;
+    height: 400px;
+    border: #ccc solid 1px;
+    margin: 20px 0;
+}
+
+// Fixes potential theme css conflict.
+.acf-map img {
+   max-width: inherit !important;
+}
+#defaultModal{
+    .modal-content{
+        padding:3em 0;
+    }
+}
+#playerModal{
+    width: 100%;
+    min-height: 500px;
+}
+#galleryModal{
+    .carousel-item{
+        display: block;
+        width: 100%;
+    }
+    img.w-100{
+    }
+}
+#filtrosBarra{
+    label.form-label{
+        margin-top: 1em;
+        font-weight: bold;
+    }
+    .box-shadow{
+        border-radius: 10px;
+    }
+}
+#lista-imoveis{
+    .card{
+        font-size: 0.8rem;
+        border-radius: 10px;
+        &.box-shadow{
+            padding:0;
+        }
+        h2.blog-post-title{
+            font: normal normal bold 18px/35px Lato;
+            a{
+                text-decoration: none;
+                color: #333;
+            }
+        }
+        @include icons-caracteristicas('horizontal');
+        .icons ul{
+            text-align: left;
+         li{
+            padding: 0;
+            background-position: left center;
+            padding-left: 2.2em;
+        }
+    }
+    .share{
+        float: right;
+        .btn{
+            padding:0.5em 0.8em;
+        }
+    }
+    }
+}
